@@ -1,0 +1,35 @@
+div.login {
+    float: right;
+    background-color: #3a5a40;
+    border-style: dashed;
+    font-weight: bold;
+    color: #ffffff;
+    border-radius: 25px;
+    padding: 10px;
+}
+
+body {
+    background-color: #588157;
+}
+
+h1 {
+    color: #ffffff;
+    text-align: center;
+    background-color: #344e41;
+    border-style: solid;
+    border-color: #ffffff;
+    border-radius: 25px;
+    padding: 10px;
+    font-weight: bold;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #344e41;
+    color: white;
+    text-align: center;
+    border-color: #ffffff;
+}

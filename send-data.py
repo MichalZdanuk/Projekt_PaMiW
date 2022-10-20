@@ -1,4 +1,5 @@
 import time
+import re
 from flask import Flask
 from flask import request
 from flask import make_response
@@ -30,8 +31,10 @@ def read_words_from_file(file_path):
 tab = read_words_from_file("words")
 def find(prod_name):
     tab_found = []
+    prod_name = '^' + prod_name
     for i in tab:
-        if(prod_name in i):
+        x = re.search(prod_name,i)
+        if(x!=None):
             tab_found.append(i)
     return tab_found
 

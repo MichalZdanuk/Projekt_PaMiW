@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>DreamCar</title>
+    <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css')}}">
+        <script src="{{ url_for('static', filename='js/jquery.js')}}"></script> -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet"
+        id="bootstrap-css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/styles.css') }}">
+
+    <script>
+        function liveSearch(value) {
+            value = value.trim();
+
+            if (value != "") {
+                $.ajax({
+                    url: "search",
+                    data: { searchText: value },
+                    dataType: "json",
+
+                    success: function (data) {
+                        var res = "";
+                        for (i in data.results) {
+                            res += "<div>" + data.results[i] + "</div>";
+                        }
+                        $("#results").html(res);
+                    }
+                })
+            } else {
+                $("#results").html("");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/index">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/login">Login</a>
+            </li>
+          </ul>
+        </div>
+    </nav>
+
+    <h1>Search Car</h1>
+
+    <div class="mycenter">
+        <div clas="row">
+            <div class="col-sm-12">
+
+            </div>
+
+            <div class="col-sm-12">
+
+                <form>
+                    <div class="form-group row">
+                        <label class="bold">Type model name:</label>
+                        <label for="inputPassword" class="text-center text-primary"></label>
+                        <input type="text" class="form-control" onkeyup="liveSearch(this.value)"
+                            placeholder="enter car model">
+                    </div>
+                </form>
+
+                <div class="results" id="results"></div>
+
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Author: Michal Zdanuk<br>
+            <a href="https://github.com/michalzdanuk">github.com/michalzdanuk</a>
+        </p>
+    </footer>
+
+</body>
+
+</html>

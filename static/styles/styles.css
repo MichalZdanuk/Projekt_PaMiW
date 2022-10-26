@@ -1,28 +1,3 @@
-div.login {
-    float: right;
-    background-color: #3a5a40;
-    border-style: dashed;
-    font-weight: bold;
-    color: #ffffff;
-    border-radius: 25px;
-    padding: 10px;
-}
-
-body {
-    background-color: #588157;
-}
-
-h1 {
-    color: #ffffff;
-    text-align: center;
-    background-color: #344e41;
-    border-style: solid;
-    border-color: #ffffff;
-    border-radius: 25px;
-    padding: 10px;
-    font-weight: bold;
-}
-
 footer {
     position: fixed;
     left: 0;
@@ -32,4 +7,40 @@ footer {
     color: white;
     text-align: center;
     border-color: #ffffff;
+}
+
+body {
+    background-color: #588157;
+}
+
+div.results {
+    background-color: #3a5a40;
+    border-style: dashed;
+    font-weight: bold;
+    color: #ffffff;
+    border-radius: 25px;
+    padding: 10px;
+    margin-bottom: 100px;
+}
+
+h1 {
+    color: #ffffff;
+    text-align: center;
+    background-color: #344e41;
+    border-style: solid;
+    border-color: #ffffff;
+
+    padding: 10px;
+    font-weight: bold;
+}
+
+label.bold {
+    font-weight: bold;
+    margin: auto;
+    font-size: 40px;
+}
+
+div.mycenter {
+    margin: auto;
+    width: 50%;
 }

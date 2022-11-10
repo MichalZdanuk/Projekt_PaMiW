@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}DreamCar{% endblock %}
+{% block livesearchscript %}
+<script>
+    function liveSearch(value) {
+        value = value.trim();
+
+        if (value != "") {
+            $.ajax({
+                url: "search",
+                data: { searchText: value },
+                dataType: "json",
+
+                success: function (data) {
+                    var res = "";
+                    for (i in data.results) {
+                        res += "<div>" + data.results[i] + "</div>";
+                    }
+                    $("#results").html(res);
+                }
+            })
+        } else {
+            $("#results").html("");
+        }
+    }
+</script>
+{% endblock %}
+{% block content %}
+<h1>Search Car</h1>
+
+<div class="mycenter">
+    <div clas="row">
+        <div class="col-sm-12">
+
+        </div>
+
+        <div class="col-sm-12">
+
+            <form>
+                <div class="form-group row">
+                    <label class="bold">Type model name:</label>
+                    <label for="inputPassword" class="text-center text-primary"></label>
+                    <input type="text" class="form-control" onkeyup="liveSearch(this.value)"
+                        placeholder="enter car model">
+                </div>
+            </form>
+
+            <div class="results" id="results"></div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

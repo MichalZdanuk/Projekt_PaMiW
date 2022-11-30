@@ -31,7 +31,7 @@
                 <a class="nav-item nav-link" href="{{ url_for('about') }}">About</a>
                 <a class="nav-item nav-link" href="{{ url_for('faq') }}">FAQ</a>
                 <a class="nav-item nav-link" href="{{ url_for('safety_rules') }}">Safety Rules</a>
-
+                
 
               </div>
               <!-- Navbar Right Side -->
@@ -44,6 +44,7 @@
                   <a class="nav-item nav-link" href="{{ url_for('login') }}">Login</a>
                   <a class="nav-item nav-link" href="{{ url_for('register') }}">Register</a>
                 {% endif %}
+                <a class="nav-item nav-link" href="{{ url_for('authorize_with_github') }}"><img alt="githublogo" src="/static/github/github_logo.png" style="width:42px;height:42px;"></a>
               </div>
             </div>
           </div>

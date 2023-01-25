@@ -18,6 +18,12 @@ def home():
     posts = Post.query.all()
     return render_template('home.html', posts=posts)
 
+@app.route("/home/posts")
+def home_posts():
+    posts = Post.query.all()
+    values = [post.title for post in posts]
+    return values
+
 
 @app.route("/about")
 def about():

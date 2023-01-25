@@ -1,0 +1,11 @@
+flask
+flask_sqlalchemy
+flask_bcrypt
+flask_login
+Pillow
+requests
+flask_wtf
+wtforms
+wtforms-validators
+email-validator
+python-dotenv
